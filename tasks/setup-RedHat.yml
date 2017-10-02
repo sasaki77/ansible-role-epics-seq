@@ -1,0 +1,7 @@
+- name: Install epel-relase from yum
+  yum: name=epel-release state=present
+  become: true
+
+- name: Install re2c from yum
+  yum: name=re2c state=present
+  become: true

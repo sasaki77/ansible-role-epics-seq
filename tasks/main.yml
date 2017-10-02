@@ -1,0 +1,29 @@
+- name: Include OS Specific setup tasks
+  include_tasks: setup-{{ ansible_os_family }}.yml
+
+- name: Common task for seq module
+  include_role: 
+    name: ansible-role-epics-base
+    tasks_from: module_common
+  with_items:
+    - "{{ epics_seq_module }}"
+  loop_control:
+    loop_var: module
+
+- name: Common task for seq module
+  include_role: 
+    name: ansible-role-epics-base
+    tasks_from: module_configure_release
+  with_items:
+    - "{{ epics_seq_module }}"
+  loop_control:
+    loop_var: module
+
+- name: Common task for seq module
+  include_role: 
+    name: ansible-role-epics-base
+    tasks_from: module_make
+  with_items:
+    - "{{ epics_seq_module }}"
+  loop_control:
+    loop_var: module
