@@ -10,7 +10,7 @@
   loop_control:
     loop_var: module
 
-- name: Common task for seq module
+- name: Configure release for seq module
   include_role: 
     name: ansible-role-epics-base
     tasks_from: module_configure_release
@@ -19,7 +19,7 @@
   loop_control:
     loop_var: module
 
-- name: Common task for seq module
+- name: Make seq module
   include_role: 
     name: ansible-role-epics-base
     tasks_from: module_make
