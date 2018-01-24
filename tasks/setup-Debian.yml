@@ -1,4 +1,2 @@
-- name: Install packages from yum
-  apt: pkg={{ item }} state=present
-  with_items: "{{ redhat_packages }}"
-  become: true
+- name: Install packages from apt
+  apt: pkg=re2c state=present
